@@ -32,18 +32,13 @@ allprojects {
         mavenLocal()
         google()
         jcenter()
-        flatDir {
-            dirs 'libs'
-        }
         maven { url 'https://www.jitpack.io' }
     }
 }
 
 
 dependencies {
-    implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation(name:'jcf-release', ext:'aar')
-    implementation(name:'sdk', ext:'aar')
+    compile fileTree(dir: "libs", include: ["*.aar"])
 
     compile 'com.facebook.react:react-native:+'
 }
